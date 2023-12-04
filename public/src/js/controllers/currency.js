@@ -14,7 +14,7 @@ angular.module('insight.currency').controller('CurrencyController',
       value = value * 1; // Convert to number
 
       if (!isNaN(value) && typeof value !== 'undefined' && value !== null) {
-        if (value === 0.00000000) return '0 ' + this.symbol; // fix value to show
+        if (value === 0.00000) return '0 ' + this.symbol; // fix value to show
 
         var response;
 
@@ -22,7 +22,7 @@ angular.module('insight.currency').controller('CurrencyController',
           response = _roundFloat((value * this.factor), 2);
         } else if (this.symbol === 'm'+netSymbol) {
           this.factor = 1000;
-          response = _roundFloat((value * this.factor), 5);
+          response = _roundFloat((value * this.factor), 2);
         } else if (this.symbol === 'bits') {
           this.factor = 1000000;
           response = _roundFloat((value * this.factor), 2);
@@ -31,7 +31,7 @@ angular.module('insight.currency').controller('CurrencyController',
           response = value;
         }
         // prevent sci notation
-        if (response < 1e-7) response=response.toFixed(8);
+        if (response < 1e-4) response=response.toFixed(5);
 
         return response + ' ' + this.symbol;
       }
@@ -50,7 +50,7 @@ angular.module('insight.currency').controller('CurrencyController',
       } else if (currency === 'm'+netSymbol) {
         $rootScope.currency.factor = 1000;
       } else if (currency === 'bits') {
-        $rootScope.currency.factor = 1000000;
+        $rootScope.currency.factor = 100000;
       } else {
         $rootScope.currency.factor = 1;
       }

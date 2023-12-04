@@ -115,21 +115,21 @@ margin-left: 0;
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: #373D42;}
 
 .navbar-default {
-  background-color: #ccded5;
+  background-color: #8DC429;
   margin: 0;
   border: 0;
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #346464;
+  color: #F4FBE8;
   font-family: 'Ubuntu', sans-serif;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus {
-  background-color: #ccded5;
-  color: #346464;
+  background-color: #6C9032;
+  color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.active>a:hover {
@@ -175,7 +175,7 @@ margin-left: 0;
 }
 
 .navbar-form .form-control {
-  background-color: #bdc7c2;
+  background-color: #7CAD23;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -190,7 +190,7 @@ margin-left: 0;
   padding-bottom: 22px;
 }
 
-#search-form { color: #525252; }
+#search-form { color: #fff; }
 
 #search.loading {
   background-image: url('../img/loading.gif');
@@ -210,14 +210,14 @@ margin-left: 0;
 #search { color: #fff; }
 
 #search::-webkit-input-placeholder {
-  color: #a7a7a7;
+  color: #BCDF7E;
   font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   font-weight: 100;
 }
 
 #search::-moz-placeholder {
-  color: #a7a7a7;
+  color: #BCDF7E;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 100;
 }
@@ -225,7 +225,7 @@ margin-left: 0;
 .status {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background-color: #346464;
+  background-color: #597338;
   border-radius: 3px;
   margin: 15px 0;
   padding: 8px 10px;
@@ -621,10 +621,10 @@ margin-left: 0;
   display: inline-block;
   height: 80px;
 }
-#powered a.supernet {
-  background-image: url('../img/supernet.png');
+#powered a.bitcore {
+  background-image: url('../img/logo.svg');
   background-size: 80px;
-  width: 100%;
+  width: 30%;
 }
 #powered a.nodejs {
   background-image: url('../img/nodejs.png');
@@ -859,7 +859,7 @@ a.v_highlight_more {
   }
 }
 
-/* Komodo Explorer Misc CSS
+/* Candy Explorer Misc CSS
 -------------------------------------------------- */
 #brandImg {
   height: 45px;

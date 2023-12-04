@@ -9,7 +9,7 @@ var InsightUI = function(options) {
   if (typeof options.apiPrefix !== 'undefined') {
     this.apiPrefix = options.apiPrefix;
   } else {
-    this.apiPrefix = 'insight-api-komodo';
+    this.apiPrefix = 'insight-api-candy';
   }
   if (typeof options.routePrefix !== 'undefined') {
     this.routePrefix = options.routePrefix;
@@ -18,12 +18,13 @@ var InsightUI = function(options) {
   }
 };
 
-InsightUI.dependencies = ['insight-api-komodo'];
+InsightUI.dependencies = ['insight-api-candy'];
 
 inherits(InsightUI, BaseService);
 
 InsightUI.prototype.start = function(callback) {
   this.indexFile = this.filterIndexHTML(fs.readFileSync(__dirname + '/../public/index.html', {encoding: 'utf8'}));
+  this.totalcoinFile = this.filterIndexHTML(fs.readFileSync(__dirname + '/../public/views/q/totalcoin.html', {encoding: 'utf8'}));
   setImmediate(callback);
 };
 
@@ -35,11 +36,21 @@ InsightUI.prototype.setupRoutes = function(app, express) {
   var self = this;
 
   app.use('/', function(req, res, next){
+    console.log("The URL is%s:",req.url);
     if (req.headers.accept && req.headers.accept.indexOf('text/html') !== -1 &&
       req.headers["X-Requested-With"] !== 'XMLHttpRequest'
     ) {
       res.setHeader('Content-Type', 'text/html');
-      res.send(self.indexFile);
+	// res.send(self.indexFile);
+	// from yang
+      if(req.url != "/q/totalcoin")
+      {
+	    res.send(self.indexFile);
+      } else
+      {
+	    res.send(self.totalcoinFile);
+      }
+
     } else {
       express.static(__dirname + '/../public')(req, res, next);
     }
