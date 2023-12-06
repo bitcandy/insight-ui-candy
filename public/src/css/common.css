@@ -325,7 +325,7 @@ margin-left: 0;
   border-radius: 2px;
 }
 .btn-primary {
-  background-color: #8DC429;
+  background-color: #f27ec6;
   border: 2px solid #76AF0F;
 }
 
@@ -372,7 +372,7 @@ margin-left: 0;
 }
 
 .txvalues-primary {
-  background-color: #8DC429;
+  background-color: #f27ec6;
 }
 
 .txvalues-default {
@@ -395,7 +395,7 @@ margin-left: 0;
   font-size: 14px;
   font-weight: normal;
 }
-.progress-bar-info { background-color: #8DC429; }
+.progress-bar-info { background-color: #f27ec6; }
 
 /* Set the fixed height of the footer here */
 #footer {
@@ -835,7 +835,7 @@ a.v_highlight_more {
   }
   .txvalues-primary {
     background: none;
-    color: #8DC429;
+    color: #f27ec6;
   }
   .txvalues-default {
     background: none;
